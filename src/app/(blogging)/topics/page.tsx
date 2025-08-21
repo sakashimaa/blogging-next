@@ -28,16 +28,6 @@ const TopicsPage = () => {
     }
   }, [topics])
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      setFilteredTopics(
-        topics?.filter((topic) =>
-          topic.name.toLowerCase().includes(query.toLowerCase())
-        )
-      )
-    }
-  }
-
   if (isLoadingTopics) {
     return <div>Loading...</div>
   }

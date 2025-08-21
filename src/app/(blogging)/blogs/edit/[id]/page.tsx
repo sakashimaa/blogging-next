@@ -69,6 +69,7 @@ const EditBlog = ({ params }: { params: Promise<{ id: string }> }) => {
 
   if (
     blog?.authorId !== session?.user.id &&
+    // @ts-expect-error: role is not defined in the session
     (session?.user.role !== 'admin' || session?.user?.role !== 'moderator')
   ) {
     return (

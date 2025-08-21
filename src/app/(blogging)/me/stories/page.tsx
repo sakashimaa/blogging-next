@@ -18,7 +18,7 @@ const MyStories = () => {
   const [alertOpen, setAlertOpen] = useState(false)
 
   const { data } = authClient.useSession()
-  const { data: blogs } = trpc.blogs.userBlogs.useQuery({
+  const { data: blogs } = trpc.users.userBlogs.useQuery({
     authorId: data?.user?.id!,
   })
 

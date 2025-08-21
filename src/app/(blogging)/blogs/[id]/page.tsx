@@ -117,6 +117,7 @@ const GetBlog = ({ params }: { params: Promise<{ id: string }> }) => {
             />
           </div>
         )}
+        {/* @ts-expect-error: role is not defined in the session */}
         {session?.user.role === 'admin' && (
           <>
             <Separator className="my-4" />

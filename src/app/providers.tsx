@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { ReactNode, useState } from 'react'
+import { ReactNode, Suspense, useState } from 'react'
 import { Toaster } from '@/components/ui/sonner'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { trpc } from '@/lib/trpc'
@@ -20,7 +20,9 @@ export function Providers({ children }: { children: ReactNode }) {
 
   return (
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+      </QueryClientProvider>
       <Toaster position="top-center" />
     </trpc.Provider>
   )

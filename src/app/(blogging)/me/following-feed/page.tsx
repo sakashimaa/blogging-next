@@ -1,10 +1,11 @@
 'use client'
 
+import { Suspense } from 'react'
 import BlogList from '@/components/BlogList'
 import { authClient } from '@/lib/auth-client'
 import { trpc } from '@/lib/trpc'
 
-const FollowingFeedPage = () => {
+export default function FeedContent() {
   const { data: session } = authClient.useSession()
 
   const { data: followingBlogs, isPending: isLoadingFollowingBlogs } =
@@ -26,5 +27,3 @@ const FollowingFeedPage = () => {
     </div>
   )
 }
-
-export default FollowingFeedPage

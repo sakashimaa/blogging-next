@@ -120,6 +120,7 @@ export default function Header() {
             </Link>
           </Button>
           <Dropdown
+            // @ts-expect-error: avatarUrl is not defined in the session
             triggerContent={<UserAvatar avatarUrl={data?.user?.avatarUrl} />}
             triggerClassName="rounded-full hover:bg-transparent focus:bg-transparent"
             items={[

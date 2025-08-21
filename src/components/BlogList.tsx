@@ -9,7 +9,7 @@ type Props = {
         authorName?: string | null
         title: string | null
         bannerImageUrl: string | null
-        authorImageUrl: string | null
+        authorImageUrl?: string | null
         createdAt: string | null
         content?: unknown
       }[]

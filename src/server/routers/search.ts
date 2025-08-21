@@ -1,8 +1,8 @@
 import { db } from '@/db'
-import { blogs } from '@/db/schema'
+import { blogs, user } from '@/db/schema'
 import { publicProcedure, router } from '@/server/trpc'
 import { searchSchema } from '@/utils/zod-schemas'
-import { ilike, or } from 'drizzle-orm'
+import { eq, ilike, or } from 'drizzle-orm'
 
 export const searchRouter = router({
   search: publicProcedure.input(searchSchema).query(async ({ input }) => {
