@@ -1,0 +1,1 @@
+ALTER TABLE "user" ADD COLUMN "avatar_url" text DEFAULT 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQovLklWEiznIV11V4CM2awJXaJZT6u6q77Qw&s' NOT NULL;
